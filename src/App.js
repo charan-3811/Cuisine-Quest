@@ -1,29 +1,18 @@
-import './App.css';
+import React from 'react';
+import './components/style.css';
+import Meal from './components/meal';
+import Recipe from './components/Recipe';
+import {Route,Routes} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+    <>
+   <Routes>
+      <Route  path="/" element={<Meal/>}/>
+      <Route exact path="/:recipeId" element={<Recipe/>}/>
+      </Routes>
+    </>
+  )
 }
 
 export default App;
